@@ -5,4 +5,4 @@ python-dotenv
 PyPDF2
 
 
--e file:///C:/Users/devan/OneDrive/Desktop/MCQ-dev
+-e .

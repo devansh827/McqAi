@@ -4,3 +4,8 @@ MCQ_dev.egg-info/SOURCES.txt
 MCQ_dev.egg-info/dependency_links.txt
 MCQ_dev.egg-info/requires.txt
 MCQ_dev.egg-info/top_level.txt
+src/__init__.py
+src/mcqgenerator/__init__.py
+src/mcqgenerator/logger.py
+src/mcqgenerator/mcqgenerator.py
+src/mcqgenerator/utils.py
