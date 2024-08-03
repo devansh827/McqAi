@@ -1,0 +1,6 @@
+MCQ,Choices,Correct
+What is the primary focus of machine learning?,a: Developing software applications | b: Creating algorithms and statistical models | c: Providing explicit instructions to computers | d: Building hardware components,b
+Which type of machine learning involves training models on labeled data?,a: Supervised learning | b: Unsupervised learning | c: Reinforcement learning | d: Deep learning,a
+What is the goal of reinforcement learning?,a: Identifying patterns in data | b: Maximizing cumulative rewards over time | c: Training models on labeled data | d: Detecting fraud in financial transactions,b
+Which type of neural network is particularly effective for image processing?,a: Recurrent neural networks (RNNs) | b: Convolutional neural networks (CNNs) | c: Deep neural networks | d: Q-learning networks,b
+What is a common challenge faced in machine learning related to the training of models?,"a: Lack of computational resources | b: Difficulty in interpreting complex models | c: Overfitting and underfitting | d: Using small, low-quality datasets",c
