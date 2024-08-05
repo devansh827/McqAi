@@ -26,6 +26,7 @@ def read_file(file):
         )
 
 
+
 def get_table_data(quiz_str):
     try:
         # Print the input to debug
