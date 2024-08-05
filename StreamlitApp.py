@@ -39,6 +39,21 @@ st.markdown("""
         .stButton>button:hover {
             background-color: #45a049;
         }
+        .stAlert {
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .stTable thead th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .stTable tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .stTable tbody tr:hover {
+            background-color: #ddd;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -65,7 +80,6 @@ with st.form('user_inputs', clear_on_submit=True):
             with st.spinner('Generating MCQs, please wait...'):
                 try:
                     text = read_file(uploaded_file)
-
                     # Count tokens and the cost of API call
                     with get_openai_callback() as cb:
                         response = generate_evaluate_chain(
@@ -85,10 +99,10 @@ with st.form('user_inputs', clear_on_submit=True):
                 else:
                     st.success('MCQs generated successfully!')
 
-                    st.write(f"**Total Tokens:** {cb.total_tokens}")
-                    st.write(f"**Prompt Tokens:** {cb.prompt_tokens}")
-                    st.write(f"**Completion Tokens:** {cb.completion_tokens}")
-                    st.write(f"**Total Cost:** ${cb.total_cost:.2f}")
+                    # st.write(f"**Total Tokens:** {cb.total_tokens}")
+                    # st.write(f"**Prompt Tokens:** {cb.prompt_tokens}")
+                    # st.write(f"**Completion Tokens:** {cb.completion_tokens}")
+                    # st.write(f"**Total Cost:** ${cb.total_cost:.2f}")
 
                     if isinstance(response, dict):
                         quiz = response.get('quiz', None)
@@ -99,21 +113,10 @@ with st.form('user_inputs', clear_on_submit=True):
                                 df.index = df.index + 1
                                 st.table(df)
 
-                                st.text_area(label='Review', value=response['review'], height=200)
+                                st.text_area(label='Review', value=response.get('review', ''), height=200)
                             else:
                                 st.error('Error in the table data')
                     else:
                         st.write(response)
         else:
             st.warning('Please fill out all fields and upload a file.')
-
-# Additional styling
-st.markdown("""
-    <style>
-        .stAlert {
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
-""", unsafe_allow_html=True)
